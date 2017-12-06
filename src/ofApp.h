@@ -1,8 +1,12 @@
 #pragma once
 
 #include "ofMain.h"
+#include "base.h"
+#include "SceneA.h"
+#include "SceneB.h"
+#include "SceneC.h"
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 	public:
 		void setup();
 		void update();
@@ -19,4 +23,7 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+    
+        vector <base *> scenes; //複数シーンを制御する動的配列
+        int nowScene; //現在のシーン番号
 };
